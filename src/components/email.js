@@ -1,4 +1,5 @@
 import React from 'react';
+import { Route } from 'react-router-dom';
 import Sidebar from './sidebar';
 import SingleEmail from './single-email';
 import EmailList from './email-list';
@@ -10,7 +11,7 @@ export default function Email() {
             <Sidebar />
             <main>
                 <EmailList folderId="inbox" />
-                {/* <Route path='/folderId' component={ Email } exact/> */}
+                <Route path='/:folderId' component={ EmailList } />
                 {/* <SingleEmail folderId="inbox" emailId="1" /> */}
             </main>
         </div>
