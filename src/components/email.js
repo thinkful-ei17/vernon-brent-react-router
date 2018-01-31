@@ -3,18 +3,20 @@ import { Route } from 'react-router-dom';
 import Sidebar from './sidebar';
 import SingleEmail from './single-email';
 import EmailList from './email-list';
+import { BrowserRouter as Router } from 'react-router-dom'
 import './email.css';
 
 export default function Email() {
     return (
+      <Router>
         <div className="email">
             <Sidebar />
             <main>
-                <EmailList folderId="inbox" />
-                <Route path='/:folderId' component={ EmailList } />
-                {/* <SingleEmail folderId="inbox" emailId="1" /> */}
+                <Route path="/:folderId" component={EmailList} />
+                  <Route path='/:folderId/:id' component={SingleEmail}/>
             </main>
         </div>
+        </Router>
     );
 }
 

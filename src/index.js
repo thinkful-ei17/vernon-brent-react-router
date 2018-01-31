@@ -54,10 +54,8 @@ const store = createStore(state => state, initialState);
 
 
 ReactDOM.render(
-    <Router >
         <Provider store={store}>
             <Email />
-        </Provider>
-    </Router>,
+        </Provider>,
     document.getElementById('root')
 );
